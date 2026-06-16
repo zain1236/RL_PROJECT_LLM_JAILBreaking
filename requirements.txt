@@ -1,0 +1,30 @@
+# requirements.txt
+# Python 3.11.9 | RTX 5060 Ti (sm_120) | PyTorch Nightly (CUDA 12.8)
+
+# ── PyTorch Nightly (MUST install separately — see note below) ──────────────
+# Run this first in your venv BEFORE pip install -r requirements.txt:
+#
+#   pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+#
+# Do NOT put torch in this file if using the nightly index — pip will
+# pull the wrong (stable) build and the 5060 Ti won't be recognized.
+
+# ── HuggingFace stack ────────────────────────────────────────────────────────
+transformers>=4.40.0
+trl>=0.8.6
+accelerate>=0.29.0
+datasets>=2.19.0
+huggingface-hub>=0.22.0
+
+# ── Tokenizers / inference ───────────────────────────────────────────────────
+tokenizers>=0.19.0
+sentencepiece>=0.2.0
+
+# ── Reward function ──────────────────────────────────────────────────────────
+nltk>=3.8.1
+
+# ── Ollama HTTP calls (target_ollama.py) ─────────────────────────────────────
+requests>=2.31.0
+
+# ── Numeric / utility ────────────────────────────────────────────────────────
+numpy>=1.26.0

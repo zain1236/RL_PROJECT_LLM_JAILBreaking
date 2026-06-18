@@ -1,0 +1,28 @@
+# --------------------------------------------------------------------------
+# PyTorch is intentionally NOT listed here. On an RTX 5060 Ti (Blackwell,
+# sm_120 / CUDA 12.8) you need a recent nightly build with Blackwell kernels.
+# Install it FIRST, separately (PowerShell):
+#
+#   pip install --pre torch --index-url https://download.pytorch.org/whl/nightly/cu128
+#
+# Then verify:
+#   python -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+#
+# Only after that, install the rest of this file:
+#   pip install -r requirements.txt
+# --------------------------------------------------------------------------
+
+transformers>=4.44
+tokenizers>=0.19
+sacrebleu>=2.4
+bert-score>=0.3.13
+requests>=2.31
+pandas>=2.0
+matplotlib>=3.8
+scikit-learn>=1.3
+numpy>=1.26
+
+# Optional, only needed if you choose --target_backend transformers
+# (direct in-process Llama-2 load) instead of the recommended Ollama backend.
+# Skip this if bitsandbytes has no working wheel for your GPU/driver yet.
+# bitsandbytes>=0.43
